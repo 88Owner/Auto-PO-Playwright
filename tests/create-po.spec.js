@@ -16,7 +16,7 @@ function readExcel(filePath) {
 }
 
 test.use({
-  storageState: 'auth.json',
+  storageState: process.env.AUTH_STATE_FILE || 'auth.json',
 });
 
 test('Auto Create PO - Mỗi dòng 1 đơn', async ({ page }) => {

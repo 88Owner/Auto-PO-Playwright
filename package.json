@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "auth:save": "npx playwright test tests/save-auth.spec.js --reporter=html",
+    "auth:save:headed": "powershell -NoProfile -Command \"$env:AUTH_SAVE='1'; npx playwright test --headed tests/save-auth.spec.js --reporter=html\""
   },
   "keywords": [],
   "author": "",

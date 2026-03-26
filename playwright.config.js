@@ -5,8 +5,11 @@ module.exports = defineConfig({
   testDir: './tests',
 
   use: {
-    headless: false,              // Hiện browser
-    storageState: 'auth.json',    // Dùng session đã login
+    // Mặc định chạy headless để không hiện browser (production/CI).
+    // Khi cần login thủ công dùng: `--headed`.
+    headless: process.env.HEADLESS === '0' ? false : true,
+    // Cho phép đổi tài khoản bằng cách set AUTH_STATE_FILE (VD: auth2.json)
+    storageState: process.env.AUTH_STATE_FILE || 'auth.json',
     viewport: { width: 1366, height: 768 },
     ignoreHTTPSErrors: true
   },

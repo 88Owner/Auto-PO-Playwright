@@ -1,0 +1,325 @@
+{
+  "cookies": [
+    {
+      "name": "_admin_session_id",
+      "value": "lfy4fuqrw0kl03zscwzo1rxa",
+      "domain": "tinhtra.mysapo.net",
+      "path": "/admin",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bizweb-admin",
+      "value": "780CA97915757578F20C5F7B0B9054F016547940B45691054A08B20C9C78380A19E24A4BD91A4F941922694706021FDCF1FEE98F78D988D9377BAA23D91E90E0A5F0C5340BE60392E16E39BC6BEC68F38617F42A09707C773BACE9BDC283FA86786CBCB709B73BAB18E9B10E7DE734E65D7A6BD4432186956DFDEF450BBF154B549B1DCBD3C450F2A7FEF6B527F45B0ED99975B22BD53997651C60E1427EBCEA5855E6783B7B958FE79087B30E4697D0A304082C8D0EEA580FE018B43ADDE61CCBB0B9428A38998EF8EF729A146403BEC3178E93",
+      "domain": "tinhtra.mysapo.net",
+      "path": "/admin",
+      "expires": 1775788222.054757,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "device_id",
+      "value": "dbb8d0e2-89ef-4ce7-b873-d590de51f3dc",
+      "domain": "accounts.sapo.vn",
+      "path": "/",
+      "expires": 1806028191.950609,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "lang",
+      "value": "vi",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052221.105932,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.923012744.1774492193",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1782268193,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.3.243832288.1774492193",
+      "domain": ".accounts.sapo.vn",
+      "path": "/",
+      "expires": 1809052195.358812,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gid",
+      "value": "GA1.3.1379621767.1774492194",
+      "domain": ".accounts.sapo.vn",
+      "path": "/",
+      "expires": 1774578595,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_dc_gtm_UA-66880228-1",
+      "value": "1",
+      "domain": ".accounts.sapo.vn",
+      "path": "/",
+      "expires": 1774492254,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gid",
+      "value": "GA1.2.1379621767.1774492194",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1774578594,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gat_UA-239546923-1",
+      "value": "1",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1774492254,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.1.1774492194296.512282744774848190",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1782268220,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_EBZKH8C7MK",
+      "value": "GS2.2.s1774492194$o1$g0$t1774492194$j60$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052194.520221,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUmlgbOwLaEdf-l4FNM1iJpbYHLSDQbFoBrRkjBVMVzagzLKZxbNFzmzB_O6",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1809052194.626495,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "G_ENABLED_IDPS",
+      "value": "google",
+      "domain": ".accounts.sapo.vn",
+      "path": "/",
+      "expires": 1809052195.318965,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gat_UA-66880228-1",
+      "value": "1",
+      "domain": ".accounts.sapo.vn",
+      "path": "/",
+      "expires": 1774492255,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_HXMGB9WRVX",
+      "value": "GS2.1.s1774492195$o1$g0$t1774492195$j60$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052195.505941,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.243832288.1774492193",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052195.506229,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "SESSION",
+      "value": "YjgxODVhOTYtMjNlYS00ZDgyLWIyNDQtZDE5ZTdhYTlhNTFl",
+      "domain": "accounts.sapo.vn",
+      "path": "/",
+      "expires": 1809052221.105985,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ark",
+      "value": "e06e59772923489e8ea3de3ab8adb795",
+      "domain": ".accounts.sapo.vn",
+      "path": "/",
+      "expires": 1809052221.556108,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ab",
+      "value": "1",
+      "domain": "tinhtra.mysapo.net",
+      "path": "/",
+      "expires": 1809052222.054381,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "storefront_digest",
+      "value": "35d7421cdfbb14d5cb240438acc39d0921d9e00bb35d762f9bdb661c48e410a2",
+      "domain": "tinhtra.mysapo.net",
+      "path": "/",
+      "expires": 1809052222.054623,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_P9DPF3E00F",
+      "value": "GS2.1.s1774492193$o1$g1$t1774492222$j31$l0$h1779768288",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052222.334902,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_Y9YZPDEGP0",
+      "value": "GS2.1.s1774492193$o1$g1$t1774492222$j31$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052222.339712,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_GECRBQV6JK",
+      "value": "GS2.1.s1774492193$o1$g1$t1774492222$j31$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052222.349074,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_8956TVT2M3",
+      "value": "GS2.1.s1774492193$o1$g1$t1774492222$j31$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052222.35349,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_CDD1S5P7D4",
+      "value": "GS2.1.s1774492193$o1$g1$t1774492222$j31$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052222.363579,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_8Z6MB85ZM2",
+      "value": "GS2.1.s1774492193$o1$g1$t1774492222$j31$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052222.370656,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_YNVPPJ8MZP",
+      "value": "GS2.1.s1774492193$o1$g1$t1774492222$j31$l0$h0",
+      "domain": ".sapo.vn",
+      "path": "/",
+      "expires": 1809052222.379957,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://tinhtra.mysapo.net",
+      "localStorage": [
+        {
+          "name": "persist:admin:ui",
+          "value": "{\"persist\":\"{\\\"navbarCollapsed\\\":false}\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
+        }
+      ]
+    },
+    {
+      "origin": "https://accounts.sapo.vn",
+      "localStorage": [
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "ce_bot_detector",
+          "value": "{\"visits\":0,\"clicks\":3,\"firstVisitTime\":1774492209850,\"detected\":false}"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"creationTimeMs\":1774492193330},\"expires\":1782268193330}}"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1774492194290"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::a",
+          "value": "dmc1YXUxMWRjdG5yNQ=="
+        }
+      ]
+    }
+  ]
+}
