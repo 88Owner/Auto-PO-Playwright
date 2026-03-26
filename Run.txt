@@ -1,0 +1,1 @@
+$env:AUTH_STATE_FILE="auth2.json"; npx playwright test
