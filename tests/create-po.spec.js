@@ -9,10 +9,15 @@ function readExcel(filePath) {
   return rows
     .slice(1)
     .map(row => ({
-      sku: row[0],
+      sku: row[0] != null ? String(row[0]).trim() : '',
       quantity: row[1],
     }))
     .filter(r => r.sku && r.quantity);
+}
+
+/** Tránh lỗi regex và khớp đúng SKU (không dính SKU biến thể kiểu ...-RG2). */
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 test.use({
@@ -39,11 +44,12 @@ test('Auto Create PO - Mỗi dòng 1 đơn', async ({ page }) => {
     });
     await skuInput.fill(item.sku);
 
-    // Đợi list gợi ý mở ra & chọn đúng SKU
+    // Đợi list gợi ý mở ra & chọn đúng SKU (không dùng \\b với SKU có dấu -)
+    const skuEscaped = escapeRegExp(item.sku);
     const skuOption = page.getByRole('option', {
-      name: new RegExp(`SKU:\\s*${item.sku}\\b`),
+      name: new RegExp(`SKU:\\s*${skuEscaped}\\s*\\|`),
     });
-    await expect(skuOption).toBeVisible();
+    await expect(skuOption).toBeVisible({ timeout: 30_000 });
     await skuOption.click();
 
     // ===== Chờ row SKU xuất hiện trong bảng sản phẩm =====
