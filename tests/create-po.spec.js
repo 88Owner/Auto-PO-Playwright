@@ -15,9 +15,29 @@ function readExcel(filePath) {
     .filter(r => r.sku && r.quantity);
 }
 
-/** Tránh lỗi regex và khớp đúng SKU (không dính SKU biến thể kiểu ...-RG2). */
 function escapeRegExp(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function findInventoryItemBySku(payload, sku) {
+  if (!payload || typeof payload !== 'object') return null;
+
+  const items = Array.isArray(payload.inventory_items)
+    ? payload.inventory_items
+    : Array.isArray(payload.inventoryItems)
+      ? payload.inventoryItems
+      : Array.isArray(payload.items)
+        ? payload.items
+        : null;
+
+  if (!items) return null;
+
+  const normalizedSku = String(sku).trim();
+  return (
+    items.find(it => String(it?.sku ?? '').trim() === normalizedSku) ??
+    items.find(it => String(it?.code ?? '').trim() === normalizedSku) ??
+    null
+  );
 }
 
 test.use({
@@ -25,9 +45,9 @@ test.use({
 });
 
 test('Auto Create PO - Mỗi dòng 1 đơn', async ({ page }) => {
-  test.setTimeout(120_000);
-
   const data = readExcel('./data.xlsx');
+  // Không giới hạn timeout cho bài test này.
+  test.setTimeout(0);
 
   for (const item of data) {
     console.log(`Đang tạo PO cho SKU: ${item.sku}`);
@@ -42,12 +62,33 @@ test('Auto Create PO - Mỗi dòng 1 đơn', async ({ page }) => {
     const skuInput = page.getByRole('textbox', {
       name: /Tìm theo tên, mã SKU, quét mã Barcode/i,
     });
+    const waitInventoryItems = page.waitForResponse(
+      (res) =>
+        res.ok() &&
+        res.request().method() === 'GET' &&
+        /inventory_items/i.test(res.url()),
+      { timeout: 30_000 }
+    );
+
     await skuInput.fill(item.sku);
 
-    // Đợi list gợi ý mở ra & chọn đúng SKU (không dùng \\b với SKU có dấu -)
-    const skuEscaped = escapeRegExp(item.sku);
+    // Ưu tiên lấy đúng SKU từ API inventory_items (ổn định khi dropdown có nhiều kết quả).
+    let apiMatchedSku = null;
+    try {
+      const res = await waitInventoryItems;
+      const json = await res.json().catch(() => null);
+      const matched = findInventoryItemBySku(json, item.sku);
+      apiMatchedSku = matched?.sku ? String(matched.sku).trim() : null;
+    } catch {
+      // Nếu không bắt được response (hoặc JSON khác format), fallback sang locator theo text bên dưới.
+    }
+
+    const skuToClick = apiMatchedSku || item.sku;
+    const skuEscaped = escapeRegExp(String(skuToClick).trim());
+
+    // Chọn option có đúng SKU (tránh dính các biến thể kiểu -RG2).
     const skuOption = page.getByRole('option', {
-      name: new RegExp(`SKU:\\s*${skuEscaped}\\s*\\|`),
+      name: new RegExp(`SKU:\\s*${skuEscaped}(\\s*\\||\\s*$)`),
     });
     await expect(skuOption).toBeVisible({ timeout: 30_000 });
     await skuOption.click();
@@ -80,8 +121,12 @@ test('Auto Create PO - Mỗi dòng 1 đơn', async ({ page }) => {
       .locator('#AppFrameScrollable')
       .getByRole('button', { name: 'Tạo & duyệt đơn đặt hàng' });
 
-    await expect(submitButton).toBeEnabled();
-    await submitButton.click();
+    await submitButton.scrollIntoViewIfNeeded();
+    await expect(submitButton).toBeVisible({ timeout: 30_000 });
+    await expect(submitButton).toBeEnabled({ timeout: 30_000 });
+    // Click đôi khi fail vì overlay/DOM re-render; retry nhẹ.
+    await submitButton.click({ timeout: 30_000, trial: true }).catch(() => {});
+    await submitButton.click({ timeout: 30_000 });
 
     await page.waitForLoadState('networkidle');
   }
