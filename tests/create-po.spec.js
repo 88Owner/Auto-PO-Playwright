@@ -128,6 +128,11 @@ test('Auto Create PO - Mỗi dòng 1 đơn', async ({ page }) => {
     await submitButton.click({ timeout: 30_000, trial: true }).catch(() => {});
     await submitButton.click({ timeout: 30_000 });
 
-    await page.waitForLoadState('networkidle');
+    // Chờ tạo đơn xong. Không dùng networkidle — Sapo có request chạy liên tục nên dễ treo.
+    await page
+      .waitForURL(/\/admin\/purchase_orders(\/\d+)?(\?.*)?$/, { timeout: 60_000 })
+      .catch(async () => {
+        await page.waitForLoadState('domcontentloaded');
+      });
   }
 });

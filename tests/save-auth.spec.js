@@ -9,11 +9,9 @@ test.use({
 // Chạy lần đầu (trên host, có browser UI) để bạn login thủ công,
 // sau đó Playwright sẽ lưu lại auth.json (hoặc AUTH_STATE_FILE).
 test('Save auth state (login thủ công)', async ({ page, context }) => {
-  // Mặc định skip để không làm hỏng các lần chạy test thường.
-  // Chỉ chạy khi bạn set: $env:AUTH_SAVE="1"
-  if (process.env.AUTH_SAVE !== '1') {
-    test.skip('Skip save-auth by default. Set AUTH_SAVE=1 to run.');
-  }
+  // Mặc định skip — chỉ chạy khi: $env:AUTH_SAVE="1"
+  test.skip(process.env.AUTH_SAVE !== '1', 'Set AUTH_SAVE=1 để lưu session mới.');
+  test.setTimeout(0);
 
   const outputPath = process.env.AUTH_STATE_FILE || 'auth.json';
 

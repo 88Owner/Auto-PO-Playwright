@@ -1,1 +1,12 @@
 $env:AUTH_STATE_FILE="auth2.json"; npx playwright test
+
+
+
+cd "c:\Users\ADMIN\Auto PO Crea"
+$env:AUTH_STATE_FILE="auth2.json"
+$env:AUTH_SAVE="1"
+npm run auth:save:headed
+
+$env:AUTH_STATE_FILE="auth2.json"
+npx playwright test
+
